@@ -10,12 +10,12 @@ public class Blackjack21 {
         System.out.println("We shall see..");
         System.out.println("..Ready? Press anything to begin!");
         
-        //Task 3 – Wait for the user to press enter.
+        // Wait for the user to press enter.
         scan.nextLine();
         
     
         
-        //Task 4 – Get two random cards.
+        // Get two random cards.
         //       – Print them: \n You get a \n" + <randomCard> + "\n and a \n" + <randomCard>
         int card1 = drawRandomCard();  
         int card2= drawRandomCard();
@@ -25,7 +25,7 @@ public class Blackjack21 {
         
         
         
-        //Task 5 – Print the sum of your hand value.
+        //       – Print the sum of your hand value.
         //       – print: your total is: <hand value>
         int handValue= Math.min(card1, 10) + Math.min(10,card2);
         System.out.println("\nYour total is: "+ handValue);
@@ -33,7 +33,7 @@ public class Blackjack21 {
         
         System.out.println("\n\tPress enter to seeing dealer's hand\n ");
         scan.nextLine();
-        //Task 6 – Get two random cards for the dealer.
+        //       – Get two random cards for the dealer.
         //       – Print: The dealer shows \n" + <first card> + "\nand has a card facing down \n" + <facedown card>
         //       – Print: \nThe dealer's total is hidden
          int firstDealerCardInt= drawRandomCard();
@@ -49,7 +49,7 @@ public class Blackjack21 {
          
          
          
-        //Task 8 – Keep asking the player to hit or stay (while loop).
+        //       – Keep asking the player to hit or stay (while loop).
         //       1. Every time the player hits
         //             – draw a new card.
         //             – calculate their new total.
@@ -108,7 +108,7 @@ public class Blackjack21 {
 
     }
 
-    /** Task 1 – make a function that returns a random number between 1 and 13
+    /**  – make a function that returns a random number between 1 and 13
      * Function name – drawRandomCard
      * @return (int)
      *
@@ -121,7 +121,7 @@ public class Blackjack21 {
     	return card;
     }
 
-    /** Task 2 – make a function that returns a String drawing of the card.
+    /** – make a function that returns a String drawing of the card.
      * Function name – cardString
      * @param cardNumber (int)
      * @return (String)
