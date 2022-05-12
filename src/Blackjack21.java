@@ -15,8 +15,6 @@ public class Blackjack21 {
         
     
         
-        // Get two random cards.
-        //       – Print them: \n You get a \n" + <randomCard> + "\n and a \n" + <randomCard>
         int card1 = drawRandomCard();  
         int card2= drawRandomCard();
         String playerCard2= cardString(card2);  //second card for player
@@ -25,38 +23,22 @@ public class Blackjack21 {
         
         
         
-        //       – Print the sum of your hand value.
-        //       – print: your total is: <hand value>
         int handValue= Math.min(card1, 10) + Math.min(10,card2);
         System.out.println("\nYour total is: "+ handValue);
         
         
         System.out.println("\n\tPress enter to seeing dealer's hand\n ");
         scan.nextLine();
-        //       – Get two random cards for the dealer.
-        //       – Print: The dealer shows \n" + <first card> + "\nand has a card facing down \n" + <facedown card>
-        //       – Print: \nThe dealer's total is hidden
+	    
          int firstDealerCardInt= drawRandomCard();
          String firstDealerCard= cardString(firstDealerCardInt);  //first dealer card
          
          int faceDownCardInt= drawRandomCard();
-      //   String faceDownCard= cardString(faceDownCardInt);
          
          System.out.println("The dealer shows\n"+ firstDealerCard + "\nand has a card facing down \n" + faceDown());
          int dealerValue= firstDealerCardInt + faceDownCardInt;
          System.out.println("\nThe dealer's total hiden");
          
-         
-         
-         
-        //       – Keep asking the player to hit or stay (while loop).
-        //       1. Every time the player hits
-        //             – draw a new card.
-        //             – calculate their new total.
-        //             – print: (new line) You get a (new line) <show new card>.
-        //             - print: your new total is <total>
-
-        //       2. Once the player stays, break the loop. 
          
        while(true) {
     	   String option= hitOrStay();
@@ -78,8 +60,6 @@ public class Blackjack21 {
      
       
        
-       
-       //task 10
        System.out.println("\nDealer's turn:");
        System.out.println("\n" + cardString(faceDownCardInt));
        System.out.println("\nDealer total is: "+ dealerValue);
@@ -108,27 +88,13 @@ public class Blackjack21 {
 
     }
 
-    /**  – make a function that returns a random number between 1 and 13
-     * Function name – drawRandomCard
-     * @return (int)
-     *
-     * Inside the function:
-     *   1. Gets a random number between 1 and 13.
-     *   2. Returns a card.
-     */
+   
     public static int drawRandomCard() {
     	int card= (int) (1+ Math.random()*13);
     	return card;
     }
 
-    /** – make a function that returns a String drawing of the card.
-     * Function name – cardString
-     * @param cardNumber (int)
-     * @return (String)
-     *
-     * Inside the function:
-     *   1. Returns a String drawing of the card.
-     */
+ 
     public static String cardString(int cardNumber) {
     
     	switch(cardNumber) {
@@ -252,16 +218,7 @@ public class Blackjack21 {
         "  |_____|\n";
     }
     
-    /** Task 7 – make a function that asks the user to hit or stay.
-     * Function name – hitOrStay
-     * @return (String)
-     *
-     * Inside the function:
-     *   1. Asks the user to hit or stay.
-     *   2. If the user doesn't enter "hit" or "stay", keep asking them to try again by printing:
-     *      Please write 'hit' or 'stay'
-     *   3. Returns the user's option 
-     */
+
     public static String hitOrStay() {
     	System.out.println("\n\nhit or stay?");	
     	String res= scan.nextLine();
